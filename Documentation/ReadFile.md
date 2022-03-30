@@ -1,10 +1,10 @@
-###Read File  
+### Read File  
 module which reads in a file and parses content into a table. return the table.  
 user supplies file name and pattern to use to parse out contents.  
 each pattern match is added to an index of the table.  
 requires the ReadOnlyTable module.  
 
-####functions  
+#### functions  
 
  - ```function ReadFile:new(filePath,pat,readOnly,keyValue,keyPat,valuePat)```  
    - read a file and put the contents into a table.

@@ -1,7 +1,7 @@
-###Helper Modules  
+### Helper Modules  
 collection of small lua modules I wrote to help me with certain projects or scripts. I hope they can be of use to someone else as well.  
 
-####List of Modules included 
+#### List of Modules included 
 
  - StringLib
    - Some basic string manipulation methods.  
@@ -25,5 +25,5 @@ collection of small lua modules I wrote to help me with certain projects or scri
  - Logger
    - module for doing very simple logging.  
 
-####further information  
+#### further information  
 please see examples and documentation for more information on each module.  

@@ -16,7 +16,7 @@ collection of small lua modules I wrote to help me with certain projects or scri
 
 
  - PrintableTable
-   - module for using a table with a tostring method set to TableToString. also use custom pairs method which preserve insertion order of keys.
+   - module for using a table with a tostring method set to TableToString. also uses a custom pairs method which preserve insertion order of keys.
 
 
  - TableToString

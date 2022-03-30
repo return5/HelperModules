@@ -1,5 +1,6 @@
 ##String Library  
 Helper module containing functions for working with strings.  
+It is recommended that you call math.randomseed() if you intend to use either of the two random methods in this module. 
 
 ###functions  
 

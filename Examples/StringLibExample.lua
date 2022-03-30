@@ -1,11 +1,11 @@
 local StrLib = require("StringLib")
 
-local str = "   hello world  how are   you?I am  fine, thanks.  "
+local str = "   hello world  how are   you?I am  fine, thanks. hello\n "
 local hidden = ".,_'hello,. >!_"
-io.write("str after removing space in front: ",StrLib.trimSpaceFront(str),"\n")
-io.write("str after removing space in rear: ",StrLib.trimSpaceRear(str),"\n")
-io.write("str after removing front and rear spaces: ",StrLib.trim(str),"\n")
-io.write("str after squishing spaces: ",StrLib.squishSpaces(str),"\n")
+io.write("str after removing space in front: ",StrLib.trimSpaceFront(str))
+io.write("str after removing space in rear: ",StrLib.trimSpaceRear(str))
+io.write("str after removing front and rear spaces: ",StrLib.trim(str))
+io.write("str after squishing spaces: ",StrLib.squishSpaces(str))
 io.write("word in hidden is: ",StrLib.word(hidden),"\n")
 io.write("word count in str is: ",#StrLib.getWords(str),"\n")
 

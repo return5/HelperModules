@@ -98,6 +98,9 @@ function StringLib:trimSpaceFront(str)
     return match(str,"^%s*(.+)$")
 end
 
+--convert a string to a table.
+--use patter to set each index or if nil then each index is one character from the string.
+--if sep isnt nil then append it to the end of each index in table..
 function StringLib:strToTbl(str,pat,sep)
     local t = {}
     local pattern = pat and pat or "."

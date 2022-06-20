@@ -19,8 +19,8 @@ _ENV = StringLib
 --get a random word from a string or table of words.
 --if param is a string it is first converted to a table of words.
 --each time it is called it grabs a word at random from the table, so repeated values are expected.
-function StringLib.getRandom(str)
-    local words = (type(str) == "string" and StringLib.getWords(str)) or (type(str) == "table" and str)
+function StringLib:getRandom(str)
+    local words = (type(str) == "string" and StringLib:getWords(str)) or (type(str) == "table" and str)
     return function()
         return words[rand(1,#words)]
     end
@@ -45,8 +45,8 @@ end
 --if param is string then first convert it to a table of words.
 --if rollOver is true then once all the words in the original table of words have been used, the word table is reshuffled and is used again.
 --if rollOver is false or nil then after all words have been used up all subsequent calls will return an empty string.
-function StringLib.getUniqueRandom(str,rollOver)
-    local words   = (type(str) == "string" and StringLib.getWords(str)) or (type(str) == "table" and str)
+function StringLib:getUniqueRandom(str,rollOver)
+    local words   = (type(str) == "string" and StringLib:getWords(str)) or (type(str) == "table" and str)
     local shuffle = randShuffle(words)
     return function()
         if #shuffle == 0 then
@@ -64,7 +64,7 @@ end
 
 --return table containing all words from the string.
 -- word is defined as group of any non space or non punctuation characters, except hypen, which is surrounded by space or punctuation characters.
-function StringLib.getWords(str)
+function StringLib:getWords(str)
     local words = {}
     for m in gmatch(str,wordsMatch) do
         words[#words + 1] = m
@@ -74,28 +74,38 @@ end
 
 --grab the first word in the string.
 --word is defined as group of any non space and non punctuation characters, except hyphen, which is surrounded by space or punctuation characters.
-function StringLib.word(str)
+function StringLib:word(str)
     return match(str,wordPat)
 end
 
 --function to replace all multi-spaces with a single space.
-function StringLib.squishSpaces(str)
+function StringLib:squishSpaces(str)
     return gsub(str,"  +"," ")
 end
 
 --trim space from front and rear of string.
-function StringLib.trim(str)
-    return StringLib.trimSpaceRear(StringLib.trimSpaceFront(str))
+function StringLib:trim(str)
+    return StringLib:trimSpaceRear(StringLib.trimSpaceFront(str))
 end
 
 --trim space from the rear of a string.
-function StringLib.trimSpaceRear(str)
+function StringLib:trimSpaceRear(str)
     return match(str,"^(.-)%s*$")
 end
 
 --trim space from the front of a string.
-function StringLib.trimSpaceFront(str)
+function StringLib:trimSpaceFront(str)
     return match(str,"^%s*(.+)$")
+end
+
+function StringLib:strToTbl(str,pat,sep)
+    local t = {}
+    local pattern = pat and pat or "."
+    local add = sep and function(char) t[#t + 1] = char .. sep end or function(char) t[#t + 1] = char end
+    for char in str:gmatch(pattern) do
+        add(char)
+    end
+    return t
 end
 
 return StringLib

@@ -34,7 +34,7 @@ function PrintableTable:printableTable(t)
     local index    = {}
     return setmetatable({}, {
             __index    = t,
-            --out custom method to handle inserting new keys or indexes.
+            --our custom method to handle inserting new keys or indexes.
             __newindex = function(_,k,v) newIndex(t,k,v,keyPairs,index) end,
             __len      = function() return #t end,
             --can be used to check if a table is our printable type.

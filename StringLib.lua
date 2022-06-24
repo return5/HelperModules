@@ -194,11 +194,13 @@ local function tableIter(tbl,i)
 	if tbl[i] then return i,tbl[i] end
 end
 
+-- iterate over each character in str.
 function StringLib:charIter(str)
 	local tbl = self:strToTbl(str)
 	return  tableIter,tbl,0
 end
 
+--iterate over each word in str.
 function StringLib:wordIter(str)
 	local tbl = self:strToTbl(str,"(%w*%p*)%s*")
 	return  tableIter,tbl,0

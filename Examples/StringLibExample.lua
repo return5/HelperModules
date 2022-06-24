@@ -31,3 +31,9 @@ local strToSplit = "This string will split into two string."
 local str1,str2 = StrLib:splitAtWord(strToSplit,"split",true)
 io.write("str1: ",str1,"\n")
 io.write("str2: ",str2,"\n")
+
+
+io.write("iterating over each character in string.\n")
+for i,char in StrLib:charIter("hello, world!") do
+	io.write("char ",i," is: ",char,"\n")
+end

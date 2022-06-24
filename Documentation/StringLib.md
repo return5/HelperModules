@@ -98,3 +98,15 @@ It is recommended that you call math.randomseed() if you intend to use either of
 
 - ```StringLib:padBack(str,char,n)```
     - pad the back of the provided string with the provided char up to length n.
+
+
+- ```StringLib:isEmpty(str)```
+  - returns true is str is nil,"", or nothing but space character(s). 
+
+
+- ```StringLib:charIter(str)```
+  - returns iterator which iterates over each character in provided string in order. 
+
+- ```StringLib:wordIter(str)```
+    - returns iterator which iterates over each word in provided string in order. 
+    - a word is defined as any combination of letters,numbers,or punctuation. 

@@ -5,6 +5,7 @@ local type   = type
 local rep    = string.rep
 local unpack = table.unpack
 local pairs  = pairs
+local io = io
 
 local StringLib  = {}
 StringLib.__index = StringLib
@@ -186,6 +187,21 @@ end
 function StringLib:padBack(str,char,n)
 	if #str >= n then return str end
 	return str .. rep(char,n - #str)
+end
+
+local function tableIter(tbl,i)
+	i = i + 1
+	if tbl[i] then return i,tbl[i] end
+end
+
+function StringLib:charIter(str)
+	local tbl = self:strToTbl(str)
+	return  tableIter,tbl,0
+end
+
+function StringLib:wordIter(str)
+	local tbl = self:strToTbl(str,"(%w*%p*)%s*")
+	return  tableIter,tbl,0
 end
 
 return StringLib

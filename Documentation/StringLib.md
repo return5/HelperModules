@@ -106,7 +106,10 @@ It is recommended that you call math.randomseed() if you intend to use either of
 
 - ```StringLib:charIter(str)```
   - returns iterator which iterates over each character in provided string in order. 
+  - iterators operates over a table created from passed in string, so changes to string inside of iteration dont affect iteration. 
+
 
 - ```StringLib:wordIter(str)```
     - returns iterator which iterates over each word in provided string in order. 
     - a word is defined as any combination of letters,numbers,or punctuation. 
+    - iterators operates over a table created from passed in string, so changes to string inside of iteration dont affect iteration. 

@@ -3,7 +3,7 @@ collection of small lua modules I wrote to help me with certain projects or scri
 
 #### List of Modules included 
 
- - StringLib
+ - StringLib  
    - Some basic string manipulation methods.  
    
 
@@ -16,14 +16,17 @@ collection of small lua modules I wrote to help me with certain projects or scri
 
 
  - PrintableTable
-   - module for using a table with a tostring method set to TableToString. also uses a custom pairs method which preserve insertion order of keys.
+   - module for using a table with a tostring method set to TableToString. also uses a custom pairs method which preserve insertion order of keys.  
 
 
- - TableToString
-   - module for converting a table into a human-readable string for pritning. 
+ - TableToString  
+   - module for converting a table into a human-readable string for pritning.  
 
- - Logger
-   - module for doing very simple logging.  
+ - ~~Logger~~
+   - ~~module for doing very simple logging.~~  currently needs major work, removed until it is fixed  
+
+ - Utils  
+    - Utility methods for working with tables.  
 
 #### further information  
 please see examples and documentation for more information on each module.  

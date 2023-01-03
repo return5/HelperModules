@@ -5,7 +5,6 @@ local type   = type
 local rep    = string.rep
 local unpack = table.unpack
 local pairs  = pairs
-local io = io
 
 local StringLib  = {}
 StringLib.__index = StringLib
@@ -31,15 +30,11 @@ end
 
 --get a table which has been randomly shuffled.
 local function randShuffle(words)
-	local shuff = {}
-	local prevI = {}
-	for i=1,#words,1 do
-		local j
-		repeat
-			j = rand(1,#words)
-		until(not prevI[j])
-		prevI[j] = true
-		shuff[j] = words[i]
+	for i= #words,1,-1 do
+        local temp <const> = words[i]
+        local newI <const> = rand(#words)
+        words[i] = words[newI]
+        words[newI] = temp
 	end
 	return shuff
 end
